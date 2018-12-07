@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from '@reach/router';
 
 class Pet extends React.Component {
   render() {
-    const { name, animal, breed, media, location } = this.props;
+    const { name, animal, breed, media, location, id } = this.props;
     let photos = [
     {
       value: null,
@@ -19,6 +20,9 @@ class Pet extends React.Component {
           <h1>{name}</h1>
           <h2>{`${animal} — ${breed} — ${location}`}</h2>
         </div>
+        <Link to={`/details/${id}`} className="pet">
+          […]
+        </Link>;
       </div>
     );
   }
